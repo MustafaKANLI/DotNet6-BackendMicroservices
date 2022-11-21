@@ -1,0 +1,37 @@
+<Project Sdk="Microsoft.NET.Sdk.Web">
+
+  <PropertyGroup>
+    <TargetFramework>net6.0</TargetFramework>
+    <Nullable>enable</Nullable>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <DockerComposeProjectPath>..\..\..\docker-compose.dcproj</DockerComposeProjectPath>
+    <UserSecretsId>6b7dda3f-6025-493c-8d30-fc014494abcb</UserSecretsId>
+    <DockerDefaultTargetOS>Linux</DockerDefaultTargetOS>
+    <DockerfileContext>..\..\..</DockerfileContext>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <Content Remove="SeedData\USER_MOCK_DATA.json" />
+  </ItemGroup>
+
+  <ItemGroup>
+	<PackageReference Include="MassTransit" Version="8.0.7" />
+	<PackageReference Include="MassTransit.Newtonsoft" Version="8.0.7" />
+	<PackageReference Include="MassTransit.RabbitMQ" Version="8.0.7" />
+	<PackageReference Include="MediatR" Version="11.0.0" />
+	<PackageReference Include="Newtonsoft.Json" Version="13.0.1" />
+    <PackageReference Include="Microsoft.VisualStudio.Azure.Containers.Tools.Targets" Version="1.14.0" />
+    <PackageReference Include="Swashbuckle.AspNetCore" Version="6.2.3" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\..\Common\Common.csproj" />
+    <ProjectReference Include="..\UsersService.Application\UsersService.Application.csproj" />
+    <ProjectReference Include="..\UsersService.Infrastructure.Persistence\UsersService.Infrastructure.Persistence.csproj" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <None Include="SeedData\USER_MOCK_DATA.json" />
+  </ItemGroup>
+
+</Project>

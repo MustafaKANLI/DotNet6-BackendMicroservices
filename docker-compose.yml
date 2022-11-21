@@ -1,0 +1,91 @@
+version: '3.4'
+
+services:
+  usersservice.api:
+    image: ${DOCKER_REGISTRY-}usersserviceapi
+    build:
+      context: .
+      dockerfile: Microservices/UsersService/UsersService.API/Dockerfile
+    networks:
+      - backend
+
+  otherservice.api:
+    image: ${DOCKER_REGISTRY-}otherserviceapi
+    build:
+      context: .
+      dockerfile: Microservices/OtherService/OtherService.API/Dockerfile
+    networks:
+      - backend
+
+  authservice.api:
+    image: ${DOCKER_REGISTRY-}authserviceapi
+    build:
+      context: .
+      dockerfile: Microservices/AuthService/AuthService.API/Dockerfile
+    networks:
+      - backend
+
+  apigateway:
+    image: ${DOCKER_REGISTRY-}apigateway
+    build:
+      context: .
+      dockerfile: Microservices/APIGateway/APIGateway/APIGateway/Dockerfile
+    ports:
+      - 8001:443
+    networks:
+      - backend
+
+  rabbitmq:
+    image: rabbitmq:3-management
+    container_name: 'rabbitmq'
+    ports:
+        - 5672:5672
+        - 15672:15672
+    volumes:
+        - ~/.docker-conf/rabbitmq/data/:/var/lib/rabbitmq/
+        - ~/.docker-conf/rabbitmq/log/:/var/log/rabbitmq
+    environment:
+        - RABBITMQ_DEFAULT_USER=admin
+        - RABBITMQ_DEFAULT_PASS=admin
+    networks:
+        - backend
+
+  postgres:
+    container_name: postgres_container
+    image: postgres
+    environment:
+      POSTGRES_USER: postgres
+      POSTGRES_PASSWORD: 123456
+      PGDATA: /data/postgres
+    volumes:
+       - postgres:/data/postgres
+    ports:
+      - "5432:5432"
+    networks:
+      - backend
+    restart: unless-stopped
+  
+  pgadmin:
+    container_name: pgadmin_container
+    image: dpage/pgadmin4
+    environment:
+      PGADMIN_DEFAULT_EMAIL: ${PGADMIN_DEFAULT_EMAIL:-pgadmin4@pgadmin.org}
+      PGADMIN_DEFAULT_PASSWORD: ${PGADMIN_DEFAULT_PASSWORD:-admin}
+      PGADMIN_CONFIG_SERVER_MODE: 'False'
+    volumes:
+       - pgadmin:/var/lib/pgadmin
+
+    ports:
+      - "${PGADMIN_PORT:-5050}:80"
+    networks:
+      - backend
+    restart: unless-stopped
+
+networks: 
+  backend:
+    driver: bridge
+
+
+volumes:
+  pgadmin:
+  postgres:

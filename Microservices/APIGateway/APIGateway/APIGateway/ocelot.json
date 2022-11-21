@@ -1,0 +1,78 @@
+{
+  "Routes": [
+    {
+      "UpstreamPathTemplate": "/UsersService/{everything}",
+      "UpstreamHttpMethod": [ "Get", "Post", "Update", "Delete" ],
+      "DownstreamScheme": "http",
+      "DownstreamHostAndPorts": [
+        {
+          "Host": "usersservice.api",
+          "Port": 80
+        }
+      ],
+      "DownstreamPathTemplate": "/{everything}",
+      "SwaggerKey": "usersservice"
+    },
+    {
+      "UpstreamPathTemplate": "/OtherService/{everything}",
+      "UpstreamHttpMethod": [ "Get", "Post", "Update", "Delete" ],
+      "DownstreamScheme": "http",
+      "DownstreamHostAndPorts": [
+        {
+          "Host": "otherservice.api",
+          "Port": 80
+        }
+      ],
+      "DownstreamPathTemplate": "/{everything}",
+      "SwaggerKey": "otherservice"
+    },
+    {
+      "UpstreamPathTemplate": "/AuthService/{everything}",
+      "UpstreamHttpMethod": [ "Get", "Post", "Update", "Delete" ],
+      "DownstreamScheme": "http",
+      "DownstreamHostAndPorts": [
+        {
+          "Host": "authservice.api",
+          "Port": 80
+        }
+      ],
+      "DownstreamPathTemplate": "/{everything}",
+      "SwaggerKey": "authservice"
+    }
+  ],
+  "SwaggerEndPoints": [
+    {
+      "Key": "usersservice",
+      "Config": [
+        {
+          "Name": "Users Service",
+          "Version": "v1",
+          "Url": "http://usersservice.api/swagger/v1/swagger.json"
+        }
+      ]
+    },
+    {
+      "Key": "otherservice",
+      "Config": [
+        {
+          "Name": "Other Service",
+          "Version": "v1",
+          "Url": "http://otherservice.api/swagger/v1/swagger.json"
+        }
+      ]
+    },
+    {
+      "Key": "authservice",
+      "Config": [
+        {
+          "Name": "Auth Service",
+          "Version": "v1",
+          "Url": "http://authservice.api/swagger/v1/swagger.json"
+        }
+      ]
+    }
+  ],
+  "GlobalConfiguration": {
+    "BaseUrl": "https://localhost:8001"
+  }
+}
