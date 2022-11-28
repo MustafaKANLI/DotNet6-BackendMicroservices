@@ -29,7 +29,7 @@ services:
     image: ${DOCKER_REGISTRY-}apigateway
     build:
       context: .
-      dockerfile: Microservices/APIGateway/APIGateway/APIGateway/Dockerfile
+      dockerfile: APIGateway/Dockerfile
     ports:
       - 8001:443
     networks:
@@ -81,6 +81,7 @@ services:
       - backend
     restart: unless-stopped
 
+
 networks: 
   backend:
     driver: bridge
@@ -89,3 +90,4 @@ networks:
 volumes:
   pgadmin:
   postgres:
+

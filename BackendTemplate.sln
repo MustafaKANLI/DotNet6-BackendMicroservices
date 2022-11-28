@@ -43,10 +43,6 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "OtherService.Domain", "Micr
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "OtherService.Infrastructure.Persistence", "Microservices\OtherService\OtherService.Infrastructure.Persistence\OtherService.Infrastructure.Persistence.csproj", "{9BBD49C6-E7F6-4DF8-B66E-DB8B532BD4E9}"
 EndProject
-Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "APIGateway", "APIGateway", "{C54DCC6C-1B08-4E06-A02D-DA5F7A8449CD}"
-EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "APIGateway", "Microservices\APIGateway\APIGateway\APIGateway\APIGateway.csproj", "{7A9F46E2-B707-4B57-B663-53BC9F472A9A}"
-EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "AuthService", "AuthService", "{4ACD6ADF-9837-42EF-B899-5B4BDADA8FAC}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "API", "API", "{B6CD1473-71F2-4700-A640-047C3C8FB7A2}"
@@ -55,13 +51,17 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Core", "Core", "{631F63EA-A
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Infrastructure", "Infrastructure", "{9AB9D32F-CB39-4B80-9A22-5FE18C6F3411}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AuthService.API", "Microservices\AuthService\AuthService.API\AuthService.API.csproj", "{58ED4A56-DE09-461D-B6B0-4F3F92032929}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AuthService.API", "Microservices\AuthService\AuthService.API\AuthService.API.csproj", "{58ED4A56-DE09-461D-B6B0-4F3F92032929}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AuthService.Domain", "Microservices\AuthService\AuthService.Domain\AuthService.Domain.csproj", "{979AFF5F-DF98-4ECC-AA5C-2296B97C755D}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AuthService.Domain", "Microservices\AuthService\AuthService.Domain\AuthService.Domain.csproj", "{979AFF5F-DF98-4ECC-AA5C-2296B97C755D}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AuthService.Application", "Microservices\AuthService\AuthService.Application\AuthService.Application.csproj", "{97416ECA-7E9A-434E-9F8A-BCBF6C3D32E0}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AuthService.Application", "Microservices\AuthService\AuthService.Application\AuthService.Application.csproj", "{97416ECA-7E9A-434E-9F8A-BCBF6C3D32E0}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AuthService.Infrastructure.Persistence", "Microservices\AuthService\AuthService.Infrastructure.Persistence\AuthService.Infrastructure.Persistence.csproj", "{592EF2B7-F4F2-46F3-91CB-692D6BB02BFC}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AuthService.Infrastructure.Persistence", "Microservices\AuthService\AuthService.Infrastructure.Persistence\AuthService.Infrastructure.Persistence.csproj", "{592EF2B7-F4F2-46F3-91CB-692D6BB02BFC}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "APIGateway", "APIGateway\APIGateway.csproj", "{2251058A-5CE5-4DFB-93A3-F6E26CC4E329}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "APIGateway", "APIGateway", "{79FFB6C8-BFC3-4A64-B7C9-87DD4CE62575}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -109,10 +109,6 @@ Global
 		{9BBD49C6-E7F6-4DF8-B66E-DB8B532BD4E9}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{9BBD49C6-E7F6-4DF8-B66E-DB8B532BD4E9}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{9BBD49C6-E7F6-4DF8-B66E-DB8B532BD4E9}.Release|Any CPU.Build.0 = Release|Any CPU
-		{7A9F46E2-B707-4B57-B663-53BC9F472A9A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{7A9F46E2-B707-4B57-B663-53BC9F472A9A}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{7A9F46E2-B707-4B57-B663-53BC9F472A9A}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{7A9F46E2-B707-4B57-B663-53BC9F472A9A}.Release|Any CPU.Build.0 = Release|Any CPU
 		{58ED4A56-DE09-461D-B6B0-4F3F92032929}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{58ED4A56-DE09-461D-B6B0-4F3F92032929}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{58ED4A56-DE09-461D-B6B0-4F3F92032929}.Release|Any CPU.ActiveCfg = Release|Any CPU
@@ -129,6 +125,10 @@ Global
 		{592EF2B7-F4F2-46F3-91CB-692D6BB02BFC}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{592EF2B7-F4F2-46F3-91CB-692D6BB02BFC}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{592EF2B7-F4F2-46F3-91CB-692D6BB02BFC}.Release|Any CPU.Build.0 = Release|Any CPU
+		{2251058A-5CE5-4DFB-93A3-F6E26CC4E329}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{2251058A-5CE5-4DFB-93A3-F6E26CC4E329}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{2251058A-5CE5-4DFB-93A3-F6E26CC4E329}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{2251058A-5CE5-4DFB-93A3-F6E26CC4E329}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -152,8 +152,6 @@ Global
 		{907D1F30-5A89-437A-A264-9C93881AE34E} = {931782D4-2127-42E1-BF36-FEA5AA136376}
 		{61E79C53-4833-4699-9460-97E6C886C073} = {931782D4-2127-42E1-BF36-FEA5AA136376}
 		{9BBD49C6-E7F6-4DF8-B66E-DB8B532BD4E9} = {74C8F4DD-9333-4290-945C-A7368B133373}
-		{C54DCC6C-1B08-4E06-A02D-DA5F7A8449CD} = {29A9398E-44A6-494F-9FB0-5E6FAA1FE849}
-		{7A9F46E2-B707-4B57-B663-53BC9F472A9A} = {C54DCC6C-1B08-4E06-A02D-DA5F7A8449CD}
 		{4ACD6ADF-9837-42EF-B899-5B4BDADA8FAC} = {29A9398E-44A6-494F-9FB0-5E6FAA1FE849}
 		{B6CD1473-71F2-4700-A640-047C3C8FB7A2} = {4ACD6ADF-9837-42EF-B899-5B4BDADA8FAC}
 		{631F63EA-A882-4100-B59F-F2880B72B827} = {4ACD6ADF-9837-42EF-B899-5B4BDADA8FAC}
@@ -162,6 +160,7 @@ Global
 		{979AFF5F-DF98-4ECC-AA5C-2296B97C755D} = {631F63EA-A882-4100-B59F-F2880B72B827}
 		{97416ECA-7E9A-434E-9F8A-BCBF6C3D32E0} = {631F63EA-A882-4100-B59F-F2880B72B827}
 		{592EF2B7-F4F2-46F3-91CB-692D6BB02BFC} = {9AB9D32F-CB39-4B80-9A22-5FE18C6F3411}
+		{2251058A-5CE5-4DFB-93A3-F6E26CC4E329} = {79FFB6C8-BFC3-4A64-B7C9-87DD4CE62575}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {883F2E6C-9F8E-43E0-8CC0-BA4A158F3743}
