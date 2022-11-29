@@ -1,0 +1,21 @@
+﻿{
+  "WorkflowName": "User",
+  "Rules": [
+    {
+      "RuleName": "AgeOver18",
+      "SuccessEvent": "AgeOver18_Succeeded",
+      "ErrorMessage": "User is not over age 18.",
+      "ErrorType": "Error",
+      "RuleExpressionType": "LambdaExpression",
+      "Expression": "Age >= 18"
+    },
+    {
+      "RuleName": "AgeUnder60",
+      "SuccessEvent": "AgeUnder60_Succeeded",
+      "ErrorMessage": "User is not over age 18.",
+      "ErrorType": "Error",
+      "RuleExpressionType": "LambdaExpression",
+      "Expression": "Age <= 60"
+    }
+  ]
+}
