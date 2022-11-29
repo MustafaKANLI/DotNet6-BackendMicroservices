@@ -1,5 +1,6 @@
 ﻿namespace UsersService.API.Controllers.v1;
 
+using UsersService.Application.Features.Users.Commands;
 using UsersService.Application.Features.Users.Queries.GetAllUsers;
 
 using Microsoft.AspNetCore.Mvc;
@@ -14,12 +15,15 @@ public class UserController : BaseApiController
   {
     _client = client;
   }
+
   // POST api/<controller>
-  //[HttpPost]
-  //public async Task<IActionResult> Create(CreateUserCommand command)
-  //{
-  //  return Ok(await Mediator.Send(command));
-  //}
+  [HttpPost]
+  public async Task<IActionResult> Create(CreateUserCommand command)
+  {
+    var succeededRules = await ExecuteRulesAllAsync("User", command);
+
+    return Ok(await Mediator.Send(command));
+  }
 
   // GET: api/<controller>
   [HttpGet]

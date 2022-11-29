@@ -22,9 +22,5 @@
     <ProjectReference Include="..\..\Common\Common.csproj" />
     <ProjectReference Include="..\UsersService.Domain\UsersService.Domain.csproj" />
   </ItemGroup>
-  
-  <ItemGroup>
-    <Folder Include="Features\Users\Commands\" />
-  </ItemGroup>
 
 </Project>

@@ -24,6 +24,7 @@ builder.Services.AddControllers().ConfigureApiBehaviorOptions(options =>
 builder.Services.AddApplicationLayer(config);
 builder.Services.AddPersistenceInfrastructure(config);
 builder.Services.AddSwaggerExtension();
+builder.Services.AddRulesEngineExtension();
 
 builder.Services.AddCors(options =>
 {

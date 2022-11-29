@@ -11,6 +11,7 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <Content Remove="Rules\User_Rules.json" />
     <Content Remove="SeedData\USER_MOCK_DATA.json" />
   </ItemGroup>
 
@@ -21,6 +22,7 @@
 	<PackageReference Include="MediatR" Version="11.0.0" />
 	<PackageReference Include="Newtonsoft.Json" Version="13.0.1" />
     <PackageReference Include="Microsoft.VisualStudio.Azure.Containers.Tools.Targets" Version="1.14.0" />
+    <PackageReference Include="RulesEngine" Version="4.0.0" />
     <PackageReference Include="Swashbuckle.AspNetCore" Version="6.2.3" />
   </ItemGroup>
 
@@ -31,6 +33,7 @@
   </ItemGroup>
 
   <ItemGroup>
+    <None Include="Rules\User_Rules.json" />
     <None Include="SeedData\USER_MOCK_DATA.json" />
   </ItemGroup>
 
