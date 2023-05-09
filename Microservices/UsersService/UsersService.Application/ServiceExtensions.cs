@@ -9,7 +9,6 @@ public static class ServiceExtensions
 {
     public static void AddApplicationLayer(this IServiceCollection services, IConfiguration configuration)
     {
-        services.AddAutoMapper(Assembly.GetExecutingAssembly());
         services.AddMediatR(Assembly.GetExecutingAssembly());
     }
 }

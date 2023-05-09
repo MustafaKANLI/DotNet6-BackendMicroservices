@@ -1,5 +1,5 @@
-﻿using AutoMapper;
-using Common.Wrappers;
+﻿using Common.Wrappers;
+using Mapster;
 using MediatR;
 using UsersService.Application.Interfaces.Repositories;
 using UsersService.Domain.Entities;
@@ -15,16 +15,14 @@ public class CreateUserCommand : IRequest<Response<string>>
 public class CreateUserCommandHandler : IRequestHandler<CreateUserCommand, Response<string>>
 {
   private readonly IUserRepositoryAsync _userRepository;
-  private readonly IMapper _mapper;
-  public CreateUserCommandHandler(IUserRepositoryAsync userRepository, IMapper mapper)
+  public CreateUserCommandHandler(IUserRepositoryAsync userRepository)
   {
     _userRepository = userRepository;
-    _mapper = mapper;
   }
 
   public async Task<Response<string>> Handle(CreateUserCommand request, CancellationToken cancellationToken)
   {
-    var user = _mapper.Map<User>(request);
+    var user = request.Adapt<User>();
 
     await _userRepository.AddAsync(user);
 

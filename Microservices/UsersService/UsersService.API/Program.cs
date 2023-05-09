@@ -24,7 +24,7 @@ builder.Services.AddControllers().ConfigureApiBehaviorOptions(options =>
 builder.Services.AddApplicationLayer(config);
 builder.Services.AddPersistenceInfrastructure(config);
 builder.Services.AddSwaggerExtension();
-builder.Services.AddRulesEngineExtension();
+//builder.Services.AddRulesEngineExtension();
 
 builder.Services.AddCors(options =>
 {
@@ -46,24 +46,24 @@ builder.Services.AddHealthChecks();
 
 builder.Services.AddMassTransit(o =>
 {
-  o.UsingRabbitMq((context, cfg) =>
-  {
-    cfg.Host("rabbitmq", "/", h =>
+    o.UsingRabbitMq((context, cfg) =>
     {
-      h.Username("admin");
-      h.Password("admin");
-    });
+        cfg.Host("rabbitmq", "/", h =>
+      {
+          h.Username("admin");
+          h.Password("admin");
+      });
 
-    cfg.UseNewtonsoftJsonSerializer();
-    cfg.ConfigureEndpoints(context);
-  });
+        cfg.UseNewtonsoftJsonSerializer();
+        cfg.ConfigureEndpoints(context);
+    });
 });
 
 builder.Services.AddOptions<MassTransitHostOptions>().Configure(options =>
 {
-  options.WaitUntilStarted = true;
-  options.StartTimeout = TimeSpan.FromSeconds(10);
-  options.StopTimeout = TimeSpan.FromSeconds(30);
+    options.WaitUntilStarted = true;
+    options.StartTimeout = TimeSpan.FromSeconds(10);
+    options.StopTimeout = TimeSpan.FromSeconds(30);
 });
 
 var app = builder.Build();
